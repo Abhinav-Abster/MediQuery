@@ -1,26 +1,629 @@
 @import "tailwindcss";
 
+/* ══════════════════════════════════════════════════════
+   NEUMORPHISM (SOFT UI) DESIGN SYSTEM — MediQuery
+   ══════════════════════════════════════════════════════ */
+
+/* ─────────────── Design Tokens ─────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surface — Everything is molded from this single clay */
+  --bg-primary: #E0E5EC;
+  --bg-secondary: #E0E5EC;
+  --bg-tertiary: #E0E5EC;
+
+  /* Typography */
+  --text-primary: #3D4852;
+  --text-secondary: #6B7280;
+  --text-muted: #6B7280;
+
+  /* Borders → transparent in neumorphism */
+  --border: transparent;
+  --border-subtle: transparent;
+
+  /* Accent — Soft Violet */
+  --accent: #6C63FF;
+  --accent-light: rgba(108, 99, 255, 0.1);
+  --accent-glow: rgba(108, 99, 255, 0.2);
+  --accent-secondary: #38B2AC;
+
+  /* Semantic colors */
+  --teal: #38B2AC;
+  --teal-light: rgba(56, 178, 172, 0.08);
+  --emerald: #38B2AC;
+  --emerald-light: rgba(56, 178, 172, 0.08);
+  --danger: #E53E3E;
+  --danger-light: rgba(229, 62, 62, 0.08);
+  --warning: #D69E2E;
+  --warning-light: rgba(214, 158, 46, 0.08);
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #6C63FF 0%, #8B84FF 100%);
+  --gradient-card: none;
+  --gradient-glow: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(108,99,255,0.04), transparent 40%);
+
+  /* ─── NEUMORPHIC SHADOW SYSTEM (The Physics) ─── */
+  --neu-light: rgba(255, 255, 255, 0.5);
+  --neu-dark: rgb(163, 177, 198, 0.6);
+  --neu-light-strong: rgba(255, 255, 255, 0.6);
+  --neu-dark-strong: rgb(163, 177, 198, 0.7);
+
+  /* Extruded (raised from surface) */
+  --neu-extruded: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255,0.5);
+  --neu-extruded-hover: 12px 12px 20px rgb(163,177,198,0.7), -12px -12px 20px rgba(255,255,255,0.6);
+  --neu-extruded-sm: 5px 5px 10px rgb(163,177,198,0.6), -5px -5px 10px rgba(255,255,255,0.5);
+
+  /* Inset (pressed into surface) */
+  --neu-inset: inset 6px 6px 10px rgb(163,177,198,0.6), inset -6px -6px 10px rgba(255,255,255,0.5);
+  --neu-inset-deep: inset 10px 10px 20px rgb(163,177,198,0.7), inset -10px -10px 20px rgba(255,255,255,0.6);
+  --neu-inset-sm: inset 3px 3px 6px rgb(163,177,198,0.6), inset -3px -3px 6px rgba(255,255,255,0.5);
 }
 
+/* ─── Dark Mode (Neumorphic Dark Variant) ─── */
+.dark {
+  --bg-primary: #2D3748;
+  --bg-secondary: #2D3748;
+  --bg-tertiary: #2D3748;
+  --text-primary: #E2E8F0;
+  --text-secondary: #A0AEC0;
+  --text-muted: #A0AEC0;
+  --border: transparent;
+  --border-subtle: transparent;
+
+  --accent: #8B84FF;
+  --accent-light: rgba(139, 132, 255, 0.12);
+  --accent-glow: rgba(139, 132, 255, 0.2);
+  --accent-secondary: #4FD1C5;
+
+  --teal: #4FD1C5;
+  --teal-light: rgba(79, 209, 197, 0.1);
+  --emerald: #4FD1C5;
+  --emerald-light: rgba(79, 209, 197, 0.1);
+  --danger: #FC8181;
+  --danger-light: rgba(252, 129, 129, 0.1);
+  --warning: #F6E05E;
+  --warning-light: rgba(246, 224, 94, 0.1);
+
+  --gradient-hero: linear-gradient(135deg, #8B84FF 0%, #A78BFA 100%);
+  --gradient-glow: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(139,132,255,0.05), transparent 40%);
+
+  /* Dark neumorphic shadows */
+  --neu-light: rgba(255, 255, 255, 0.05);
+  --neu-dark: rgba(0, 0, 0, 0.35);
+  --neu-light-strong: rgba(255, 255, 255, 0.07);
+  --neu-dark-strong: rgba(0, 0, 0, 0.45);
+
+  --neu-extruded: 9px 9px 16px rgba(0,0,0,0.35), -9px -9px 16px rgba(255,255,255,0.05);
+  --neu-extruded-hover: 12px 12px 20px rgba(0,0,0,0.45), -12px -12px 20px rgba(255,255,255,0.07);
+  --neu-extruded-sm: 5px 5px 10px rgba(0,0,0,0.35), -5px -5px 10px rgba(255,255,255,0.05);
+
+  --neu-inset: inset 6px 6px 10px rgba(0,0,0,0.35), inset -6px -6px 10px rgba(255,255,255,0.05);
+  --neu-inset-deep: inset 10px 10px 20px rgba(0,0,0,0.45), inset -10px -10px 20px rgba(255,255,255,0.07);
+  --neu-inset-sm: inset 3px 3px 6px rgba(0,0,0,0.35), inset -3px -3px 6px rgba(255,255,255,0.05);
+}
+
+/* ─── Tailwind v4 Theme Mapping ─── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-teal: var(--teal);
+  --color-teal-light: var(--teal-light);
+  --color-emerald: var(--emerald);
+  --color-emerald-light: var(--emerald-light);
+  --color-danger: var(--danger);
+  --color-danger-light: var(--danger-light);
+  --color-warning: var(--warning);
+  --color-warning-light: var(--warning-light);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ─── Base Styles ─── */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body), "DM Sans", system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
+
+/* Scoped transitions — does NOT apply to transform/opacity (avoids GSAP conflicts) */
+body, nav, footer {
+  transition: background-color 0.3s ease, color 0.15s ease;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
+
+
+/* ═══════════════════════════════════════════════════
+   NEUMORPHIC COMPONENT CLASSES
+   ═══════════════════════════════════════════════════ */
+
+/* ─── Extruded Card (raised from surface) ─── */
+.neu-card {
+  background: var(--bg-primary);
+  border-radius: 32px;
+  box-shadow: var(--neu-extruded);
+  border: none;
+  transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+}
+.neu-card:hover {
+  box-shadow: var(--neu-extruded-hover);
+  transform: translateY(-2px);
+}
+
+/* Smaller extruded element */
+.neu-card-sm {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  box-shadow: var(--neu-extruded-sm);
+  border: none;
+  transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+}
+.neu-card-sm:hover {
+  box-shadow: var(--neu-extruded);
+  transform: translateY(-1px);
+}
+
+/* ─── Inset Well (pressed into surface) ─── */
+.neu-inset {
+  background: var(--bg-primary);
+  box-shadow: var(--neu-inset);
+  border: none;
+  border-radius: 16px;
+}
+
+/* Deep carved well — for icons, inputs */
+.neu-inset-deep {
+  background: var(--bg-primary);
+  box-shadow: var(--neu-inset-deep);
+  border: none;
+  border-radius: 16px;
+}
+
+/* Small subtle inset */
+.neu-inset-sm {
+  background: var(--bg-primary);
+  box-shadow: var(--neu-inset-sm);
+  border: none;
+  border-radius: 12px;
+}
+
+/* ─── Neumorphic Button — Primary ─── */
+.neu-btn {
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-hero);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  box-shadow: var(--neu-extruded-sm);
+  transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+  cursor: pointer;
+  isolation: isolate;
+}
+.neu-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--neu-extruded);
+}
+.neu-btn:active {
+  transform: translateY(0.5px);
+  box-shadow: var(--neu-inset-sm);
+}
+.neu-btn:focus-visible {
+  outline: none;
+  ring: 2px;
+  ring-color: var(--accent);
+  ring-offset: 2px;
+  ring-offset-color: var(--bg-primary);
+}
+/* Shimmer sweep on hover */
+.neu-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s ease;
+}
+.neu-btn:hover::before { left: 100%; }
+
+/* Secondary button — same surface color */
+.neu-btn-secondary {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 16px;
+  box-shadow: var(--neu-extruded-sm);
+  transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+  cursor: pointer;
+}
+.neu-btn-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--neu-extruded);
+}
+.neu-btn-secondary:active {
+  transform: translateY(0.5px);
+  box-shadow: var(--neu-inset-sm);
+}
+
+/* ─── Neumorphic Pill Chips ─── */
+.neu-pill {
+  background: var(--bg-primary);
+  border: none;
+  border-radius: 9999px;
+  box-shadow: var(--neu-extruded-sm);
+  transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+  cursor: pointer;
+}
+.neu-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neu-extruded);
+}
+.neu-pill:active {
+  transform: translateY(0.5px);
+  box-shadow: var(--neu-inset-sm);
+}
+
+/* ─── Neumorphic Navbar ─── */
+.neu-nav {
+  background: var(--bg-primary);
+  box-shadow: 0 4px 12px rgb(163,177,198,0.3), 0 -2px 8px rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: none;
+}
+.dark .neu-nav {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25), 0 -2px 8px rgba(255,255,255,0.03);
+}
+
+/* ─── Neumorphic Search Input ─── */
+.neu-search {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  box-shadow: var(--neu-inset);
+  border: none;
+  transition: box-shadow 0.3s ease-out;
+}
+.neu-search:focus-within {
+  box-shadow: var(--neu-inset-deep);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ─── Neumorphic Tabs ─── */
+.neu-tab {
+  background: var(--bg-primary);
+  border: none;
+  border-radius: 12px;
+  box-shadow: var(--neu-extruded-sm);
+  transition: box-shadow 0.3s ease-out, transform 0.3s ease-out, color 0.2s ease;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+.neu-tab:hover {
+  transform: translateY(-1px);
+  color: var(--text-primary);
+}
+.neu-tab.neu-tab-active {
+  box-shadow: var(--neu-inset);
+  color: var(--accent);
+  transform: translateY(0);
+  font-weight: 600;
+}
+
+/* ─── Neumorphic Toggle Switch ─── */
+.neu-toggle {
+  width: 56px;
+  height: 30px;
+  border-radius: 9999px;
+  box-shadow: var(--neu-inset);
+  background: var(--bg-primary);
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+.neu-toggle-knob {
+  position: absolute;
+  top: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--gradient-hero);
+  box-shadow: var(--neu-extruded-sm);
+  transition: left 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Neumorphic Skeleton ─── */
+@keyframes neuShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-primary) 25%,
+    rgba(255,255,255,0.3) 50%,
+    var(--bg-primary) 75%
+  );
+  background-size: 200% 100%;
+  animation: neuShimmer 1.8s ease-in-out infinite;
+  border-radius: 12px;
+  box-shadow: var(--neu-inset-sm);
+}
+
+
+/* ═══════════════════════════════════════════════════
+   ANIMATION KEYFRAMES
+   ═══════════════════════════════════════════════════ */
+
+/* ─── Floating ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float { animation: float 3s ease-in-out infinite; }
+
+/* ─── Fade In Up ─── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+/* ─── Scale In ─── */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-scale-in { animation: scaleIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+/* ─── Pulse Ring ─── */
+@keyframes pulseRing {
+  0% { transform: scale(1); opacity: 0.4; }
+  80%, 100% { transform: scale(1.8); opacity: 0; }
+}
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--accent);
+  animation: pulseRing 2s ease-out infinite;
+}
+
+/* ─── Stagger Children ─── */
+.stagger-children > * { opacity: 0; animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.12s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.19s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.26s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.33s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.40s; }
+
+/* ─── Heartbeat Line ─── */
+@keyframes heartbeat-line {
+  0%   { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+.heartbeat-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: heartbeat-line 4s linear infinite;
+}
+
+/* ─── Bounce In ─── */
+@keyframes bounceIn {
+  0% { transform: scale(0) rotate(-15deg); opacity: 0; }
+  50% { transform: scale(1.15) rotate(5deg); }
+  70% { transform: scale(0.95) rotate(-2deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+.animate-bounce-in {
+  animation: bounceIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ─── Tab Slide In ─── */
+.tab-content-enter {
+  animation: tabSlideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes tabSlideIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ─── DNA Loading Bar ─── */
+@keyframes dnaBar {
+  0%, 100% { transform: scaleY(0.4); opacity: 0.3; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+
+/* ═══════════════════════════════════════════════════
+   NEUMORPHIC DECORATIVE ELEMENTS
+   ═══════════════════════════════════════════════════ */
+
+/* ─── Concentric Circle Decoration ─── */
+.neu-circle-decoration {
+  position: absolute;
+  pointer-events: none;
+}
+.neu-circle-outer {
+  border-radius: 50%;
+  box-shadow: var(--neu-extruded);
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease-out, box-shadow 0.5s ease-out;
+}
+.neu-circle-outer:hover {
+  transform: scale(1.05);
+  box-shadow: var(--neu-extruded-hover);
+}
+.neu-circle-inner {
+  border-radius: 50%;
+  box-shadow: var(--neu-inset-deep);
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease-out;
+}
+.neu-circle-outer:hover .neu-circle-inner {
+  transform: rotate(180deg);
+}
+.neu-circle-core {
+  border-radius: 50%;
+  box-shadow: var(--neu-extruded-sm);
+  background: var(--gradient-hero);
+}
+
+/* ─── Floating Particles ─── */
+.particles-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  width: var(--size, 4px);
+  height: var(--size, 4px);
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleFloat var(--duration, 8s) var(--delay, 0s) infinite ease-in-out;
+}
+@keyframes particleFloat {
+  0% { transform: translate(0, 0) scale(0); opacity: 0; }
+  10% { opacity: 0.1; transform: translate(0, 0) scale(1); }
+  90% { opacity: 0.05; }
+  100% { transform: translate(var(--drift-x, 50px), var(--drift-y, -200px)) scale(0); opacity: 0; }
+}
+
+/* ─── MagnetLines ─── */
+.magnet-lines-container { place-items: center; gap: 0; }
+.magnet-line {
+  border-radius: 99px;
+  transform: rotate(var(--rotate));
+  transition: transform 0.15s ease;
+  opacity: 0.2;
+}
+
+/* ─── TiltCard ─── */
+.tilt-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Ripple Click ─── */
+.btn-ripple { position: relative; overflow: hidden; }
+.btn-ripple .ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(0);
+  animation: ripple-anim 0.6s linear;
+  pointer-events: none;
+}
+@keyframes ripple-anim {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ─── Magnetic Hover ─── */
+.magnetic-hover {
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ═══════════════════════════════════════════════════
+   GLITCH TEXT EFFECT
+   ═══════════════════════════════════════════════════ */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+}
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+}
+.glitch-text::before {
+  text-shadow: var(--before-shadow);
+  animation: glitch-before var(--before-duration) infinite linear alternate-reverse;
+}
+.glitch-text::after {
+  text-shadow: var(--after-shadow);
+  animation: glitch-after var(--after-duration) infinite linear alternate-reverse;
+}
+.glitch-hover-only::before,
+.glitch-hover-only::after { opacity: 0; }
+.glitch-hover-only:hover::before,
+.glitch-hover-only:hover::after { opacity: 0.8; }
+
+@keyframes glitch-before {
+  0% { clip-path: inset(40% -5% 10% 0); transform: translate(-3px, -2px); }
+  20% { clip-path: inset(5% -5% 60% 0); }
+  40% { clip-path: inset(55% -5% 5% 0); transform: translate(3px, 1px); }
+  60% { clip-path: inset(15% -5% 50% 0); }
+  80% { clip-path: inset(70% -5% 3% 0); transform: translate(-2px, 3px); }
+  100% { clip-path: inset(25% -5% 40% 0); }
+}
+@keyframes glitch-after {
+  0% { clip-path: inset(65% -5% 10% 0); transform: translate(3px, 1px); }
+  20% { clip-path: inset(10% -5% 55% 0); }
+  40% { clip-path: inset(45% -5% 15% 0); transform: translate(-3px, -1px); }
+  60% { clip-path: inset(80% -5% 2% 0); }
+  80% { clip-path: inset(20% -5% 40% 0); transform: translate(2px, -3px); }
+  100% { clip-path: inset(50% -5% 20% 0); }
+}
+
+
+/* ═══════════════════════════════════════════════════
+   GSAP INITIAL STATES (hidden until GSAP animates)
+   ═══════════════════════════════════════════════════ */
+.gsap-hero-icon,
+.gsap-title,
+.gsap-subtitle,
+.gsap-stats,
+.gsap-search,
+.gsap-pills,
+.gsap-features {
+  opacity: 0;
+}
+
+/* ─── Recharts Overrides ─── */
+.recharts-tooltip-wrapper { outline: none !important; }
+
+/* ─── Orbit Decoration ─── */
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+}
+.orbit-dot { animation: orbit 8s linear infinite; }

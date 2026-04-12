@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Paracetamol Clinical Intelligence Editorial</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#bee9ff",
+                    "surface-variant": "#e1e3e4",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-container-high": "#e6e8e9",
+                    "on-tertiary-container": "#71eaea",
+                    "on-primary-fixed-variant": "#004d64",
+                    "on-surface-variant": "#3f484d",
+                    "on-background": "#191c1d",
+                    "background": "#f8fafb",
+                    "on-secondary-fixed": "#081e27",
+                    "surface-dim": "#d8dadb",
+                    "secondary": "#4c616b",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#cfe6f2",
+                    "outline": "#70787e",
+                    "on-tertiary-fixed-variant": "#004f4f",
+                    "surface-tint": "#016684",
+                    "primary-fixed-dim": "#87d0f2",
+                    "primary-container": "#006684",
+                    "inverse-on-surface": "#eff1f2",
+                    "secondary-fixed": "#cfe6f2",
+                    "on-surface": "#191c1d",
+                    "tertiary": "#004f4f",
+                    "inverse-primary": "#87d0f2",
+                    "on-secondary-fixed-variant": "#354a53",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#002020",
+                    "surface-bright": "#f8fafb",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2e3132",
+                    "on-primary-container": "#a2e1ff",
+                    "error": "#ba1a1a",
+                    "surface-container": "#eceeef",
+                    "outline-variant": "#bfc8cd",
+                    "surface-container-low": "#f2f4f5",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#006969",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#b4cad5",
+                    "primary": "#004d64",
+                    "tertiary-fixed-dim": "#5dd9d8",
+                    "on-primary-fixed": "#001f2a",
+                    "on-secondary-container": "#526772",
+                    "tertiary-fixed": "#7df5f5",
+                    "surface": "#f8fafb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .no-line { border: none !important; }
+        .tonal-shift { background-color: #f2f4f5; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- SideNavBar -->
+<nav class="h-screen w-72 fixed left-0 border-r border-slate-200/20 bg-[#f8fafb] dark:bg-slate-950 flex flex-col py-8 z-40 hidden md:flex">
+<div class="px-8 mb-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">biotech</span>
+</div>
+<div>
+<p class="text-sm font-bold text-primary leading-tight">Clinical Lead</p>
+<p class="text-[10px] text-on-surface-variant tracking-wider uppercase">Pharma Intelligence Unit</p>
+</div>
+</div>
+</div>
+<div class="flex-1 space-y-1">
+<a class="flex items-center gap-4 text-slate-500 dark:text-slate-400 px-8 py-3 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 hover:text-cyan-800 transition-all scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Inter'] text-sm tracking-wide">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 bg-white dark:bg-slate-900 text-cyan-900 dark:text-cyan-50 font-bold rounded-l-full shadow-sm ml-4 pl-4 py-3 scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">biotech</span>
+<span class="font-['Inter'] text-sm tracking-wide">Molecular View</span>
+</a>
+<a class="flex items-center gap-4 text-slate-500 dark:text-slate-400 px-8 py-3 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 hover:text-cyan-800 transition-all scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">science</span>
+<span class="font-['Inter'] text-sm tracking-wide">Trial Data</span>
+</a>
+<a class="flex items-center gap-4 text-slate-500 dark:text-slate-400 px-8 py-3 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 hover:text-cyan-800 transition-all scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">security</span>
+<span class="font-['Inter'] text-sm tracking-wide">Safety Profile</span>
+</a>
+<a class="flex items-center gap-4 text-slate-500 dark:text-slate-400 px-8 py-3 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 hover:text-cyan-800 transition-all scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-['Inter'] text-sm tracking-wide">Editorial Notes</span>
+</a>
+</div>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-md text-xs font-semibold tracking-wide hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">export_notes</span>
+                Export Intelligence Report
+            </button>
+<div class="mt-6 pt-6 border-t border-slate-200/50 flex flex-col gap-2">
+<a class="flex items-center gap-4 text-slate-500 px-4 py-2 hover:text-primary transition-colors text-xs" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+                    Support
+                </a>
+<a class="flex items-center gap-4 text-slate-500 px-4 py-2 hover:text-primary transition-colors text-xs" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Archive
+                </a>
+</div>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl flex justify-between items-center px-10 py-4 w-full max-w-full shadow-[0_16px_64px_-12px_rgba(25,28,29,0.05)] ml-0 md:pl-80">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-cyan-950 dark:text-white uppercase font-headline">Clinical Intelligence Editorial</span>
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-cyan-900 dark:text-cyan-50 font-extrabold border-b-2 border-cyan-800 dark:border-cyan-400 pb-1 font-['Manrope'] tracking-tight cursor-pointer active:opacity-70 transition-all" href="#">Therapeutics</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-cyan-700 transition-colors duration-300 font-['Manrope'] tracking-tight cursor-pointer active:opacity-70 transition-all" href="#">Clinical Trials</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-cyan-700 transition-colors duration-300 font-['Manrope'] tracking-tight cursor-pointer active:opacity-70 transition-all" href="#">Pharmacovigilance</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-cyan-700 transition-colors duration-300 font-['Manrope'] tracking-tight cursor-pointer active:opacity-70 transition-all" href="#">Regulatory</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="bg-surface-container-low rounded-sm py-2 pl-10 pr-4 text-sm border-none focus:ring-1 focus:ring-primary focus:bg-white transition-all w-64" placeholder="Search Database..." type="text"/>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">settings</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">account_circle</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-12 px-6 md:ml-72 lg:px-12">
+<!-- Hero Editorial Section -->
+<div class="mb-12 max-w-7xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div class="space-y-1">
+<span class="text-primary tracking-[0.2em] font-semibold text-[11px] uppercase">Drug Intelligence Monograph</span>
+<h1 class="text-6xl md:text-8xl font-extrabold font-headline text-on-surface tracking-tighter leading-none">Paracetamol</h1>
+<div class="flex gap-4 items-center pt-4">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs font-bold rounded-lg tracking-wide">Acetaminophen (Generic)</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-bold rounded-lg tracking-wide uppercase">Analgesic/Antipyretic</span>
+</div>
+</div>
+<div class="flex items-center gap-8 border-l border-outline-variant/30 pl-8 h-20 hidden xl:flex">
+<div>
+<p class="text-[10px] text-slate-400 uppercase tracking-widest mb-1">Safety Index</p>
+<p class="text-3xl font-headline font-bold text-tertiary">9.4<span class="text-sm font-normal text-slate-400 ml-1">/10</span></p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase tracking-widest mb-1">Trial Status</p>
+<p class="text-3xl font-headline font-bold text-primary">PHASE IV</p>
+</div>
+</div>
+</div>
+<div class="h-[2px] w-full bg-gradient-to-r from-primary/40 via-transparent to-transparent"></div>
+</div>
+<!-- Asymmetrical Grid Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8 max-w-7xl">
+<!-- Wide Main Column (Left) -->
+<div class="xl:col-span-8 space-y-8">
+<!-- Mechanism of Action Card -->
+<div class="relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary via-primary-container to-primary/80 opacity-5"></div>
+<div class="bg-surface-container-lowest glass-effect rounded-xl p-10 relative z-10">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-primary-fixed-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">architecture</span>
+</div>
+<h2 class="text-2xl font-headline font-bold text-on-surface tracking-tight">Mechanism of Action</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-10">
+<div class="space-y-4">
+<p class="text-on-surface-variant leading-relaxed text-sm lg:text-base">
+                                    The exact mechanism of action of paracetamol is not fully understood, but it is believed to act primarily in the central nervous system. Unlike NSAIDs, paracetamol does not significantly inhibit <span class="text-primary font-semibold">cyclooxygenase (COX-1 and COX-2)</span> enzymes in peripheral tissues, which explains its lack of anti-inflammatory properties.
+                                </p>
+<p class="text-on-surface-variant leading-relaxed text-sm lg:text-base">
+                                    Current intelligence suggests the inhibition of a <span class="bg-primary-fixed text-on-primary-fixed-variant px-1 rounded">COX-3 variant</span> and modulation of the endogenous cannabinoid system and serotonergic pathways.
+                                </p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg">
+<div class="aspect-video relative rounded-sm overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="molecular rendering of a chemical compound structure with floating particles in a sterile clinical white laboratory setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoYtIKOhOFPcarZw4G25FXCGcd5oj6z7Xj3SmWZ1g8TNV4zGbqIXcfI3t925fE4diinEKqf6p928XVoyg3CkvVnqf6YKlaxpLAQZLbN1uXJ96k9wZBwy8SWlwJs3lsmw2HVTzkZQlTEa5jqCR8re_0rTSary6S2D_F9QBjYdCPoH81EfU16BBP_zGk7Iq6dmEylp4rKFneNFlC2WNkC5EcYruWjOkRgphnzxnyv6bg-L5zTtEBEbi0yJZBFtXzP9MBCub2cPQfL80b"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Molecular Mapping v2.4</span>
+<span class="text-[10px] text-primary flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+                                        PEER REVIEWED
+                                    </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Dosage & Administration Bento Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-white p-8 rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary">person</span>
+<h3 class="text-lg font-bold font-headline text-on-surface">Adult Dosage</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex justify-between items-center py-2 border-b border-surface-variant/30">
+<span class="text-sm text-on-surface-variant">Standard Dose</span>
+<span class="text-sm font-bold text-primary">500mg – 1000mg</span>
+</li>
+<li class="flex justify-between items-center py-2 border-b border-surface-variant/30">
+<span class="text-sm text-on-surface-variant">Interval</span>
+<span class="text-sm font-bold text-primary">Every 4–6 hours</span>
+</li>
+<li class="flex justify-between items-center py-2">
+<span class="text-sm text-on-surface-variant font-semibold text-error">Maximum Daily Limit</span>
+<span class="text-sm font-bold text-error">4,000mg</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary">child_care</span>
+<h3 class="text-lg font-bold font-headline text-on-surface">Pediatric Dosage</h3>
+</div>
+<div class="p-4 bg-white/50 rounded-lg mb-4">
+<p class="text-xs text-on-secondary-fixed-variant leading-relaxed">
+                                Calculated strictly by weight: <span class="font-bold text-primary">10–15 mg/kg</span> per dose.
+                            </p>
+</div>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-xs text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                                Max 5 doses in 24 hours.
+                            </li>
+<li class="flex items-center gap-3 text-xs text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                                Suspensions must be shaken thoroughly.
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Narrow Sidebar Column (Right) -->
+<div class="xl:col-span-4 space-y-8">
+<!-- Side Effects Card -->
+<div class="bg-surface-container-low rounded-xl p-8">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+<h2 class="text-xl font-headline font-bold text-on-surface">Side Effects</h2>
+</div>
+<div class="space-y-6">
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Common Profiles</p>
+<div class="space-y-2">
+<div class="flex items-center gap-3 bg-white p-3 rounded-md">
+<span class="text-primary font-bold text-xs">01</span>
+<span class="text-xs font-medium text-on-surface">Nausea &amp; Vomiting</span>
+</div>
+<div class="flex items-center gap-3 bg-white p-3 rounded-md">
+<span class="text-primary font-bold text-xs">02</span>
+<span class="text-xs font-medium text-on-surface">Insomnia (in combo drugs)</span>
+</div>
+</div>
+</div>
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Rare / Critical</p>
+<div class="space-y-2">
+<div class="flex items-center gap-3 bg-error-container p-3 rounded-md">
+<span class="material-symbols-outlined text-error text-sm">warning</span>
+<span class="text-xs font-bold text-on-error-container">Liver Toxicity</span>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-highest p-3 rounded-md">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">emergency</span>
+<span class="text-xs font-medium text-on-surface-variant">Stevens-Johnson Syndrome</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Contraindications Card -->
+<div class="bg-primary text-on-primary rounded-xl p-8 relative overflow-hidden">
+<div class="absolute -right-10 -top-10 opacity-10">
+<span class="material-symbols-outlined text-[160px]">block</span>
+</div>
+<div class="relative z-10">
+<h2 class="text-xl font-headline font-bold mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed">dangerous</span>
+                            Contraindications
+                        </h2>
+<div class="space-y-5">
+<div class="border-l-2 border-primary-fixed/30 pl-4">
+<p class="text-xs font-bold text-primary-fixed uppercase tracking-wider mb-1">Hepatic Impairment</p>
+<p class="text-xs opacity-80 leading-relaxed">Avoid or strictly limit use in patients with active liver disease or chronic alcoholism.</p>
+</div>
+<div class="border-l-2 border-primary-fixed/30 pl-4">
+<p class="text-xs font-bold text-primary-fixed uppercase tracking-wider mb-1">Drug Interaction</p>
+<p class="text-xs opacity-80 leading-relaxed">Warfarin potentiation risk. Concurrent use with other paracetamol-containing products is strictly prohibited.</p>
+</div>
+<div class="border-l-2 border-primary-fixed/30 pl-4">
+<p class="text-xs font-bold text-primary-fixed uppercase tracking-wider mb-1">Sensitivity</p>
+<p class="text-xs opacity-80 leading-relaxed">History of hypersensitivity to acetaminophen or any excipient in the formulation.</p>
+</div>
+</div>
+<div class="mt-10 pt-6 border-t border-white/10">
+<button class="w-full py-2 bg-white/10 hover:bg-white/20 rounded text-[10px] uppercase font-bold tracking-widest transition-all">
+                                View Full Safety Protocol
+                            </button>
+</div>
+</div>
+</div>
+<!-- Insight Gauges -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6">Intelligence Metrics</p>
+<div class="flex justify-around gap-4">
+<div class="text-center">
+<div class="w-20 h-20 rounded-full border-[6px] border-tertiary/10 flex items-center justify-center relative mb-2">
+<svg class="absolute inset-0 w-full h-full -rotate-90">
+<circle class="text-tertiary" cx="40" cy="40" fill="transparent" r="37" stroke="currentColor" stroke-dasharray="232" stroke-dashoffset="30" stroke-width="6"></circle>
+</svg>
+<span class="text-sm font-bold text-on-surface">87%</span>
+</div>
+<p class="text-[10px] font-semibold text-slate-500 uppercase tracking-tighter">Efficacy</p>
+</div>
+<div class="text-center">
+<div class="w-20 h-20 rounded-full border-[6px] border-primary/10 flex items-center justify-center relative mb-2">
+<svg class="absolute inset-0 w-full h-full -rotate-90">
+<circle class="text-primary" cx="40" cy="40" fill="transparent" r="37" stroke="currentColor" stroke-dasharray="232" stroke-dashoffset="10" stroke-width="6"></circle>
+</svg>
+<span class="text-sm font-bold text-on-surface">96%</span>
+</div>
+<p class="text-[10px] font-semibold text-slate-500 uppercase tracking-tighter">Bioavail.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB - suppressed for details/dashboard focused views as per instruction, but shown for actionability if required by the design system -->
+</body></html>

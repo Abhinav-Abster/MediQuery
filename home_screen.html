@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#5dd9d8",
+                    "on-surface": "#191c1d",
+                    "primary-fixed-dim": "#87d0f2",
+                    "on-tertiary-fixed": "#002020",
+                    "inverse-primary": "#87d0f2",
+                    "secondary-fixed": "#cfe6f2",
+                    "on-secondary-fixed": "#081e27",
+                    "on-secondary": "#ffffff",
+                    "outline": "#70787e",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#006969",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#004f4f",
+                    "inverse-surface": "#2e3132",
+                    "on-surface-variant": "#3f484d",
+                    "surface-container": "#eceeef",
+                    "outline-variant": "#bfc8cd",
+                    "background": "#f8fafb",
+                    "on-primary-fixed-variant": "#004d64",
+                    "on-background": "#191c1d",
+                    "surface-dim": "#d8dadb",
+                    "surface": "#f8fafb",
+                    "inverse-on-surface": "#eff1f2",
+                    "secondary-fixed-dim": "#b4cad5",
+                    "tertiary-fixed": "#7df5f5",
+                    "surface-container-high": "#e6e8e9",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#006684",
+                    "on-secondary-container": "#526772",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#71eaea",
+                    "on-secondary-fixed-variant": "#354a53",
+                    "surface-container-low": "#f2f4f5",
+                    "on-tertiary-fixed-variant": "#004f4f",
+                    "primary-fixed": "#bee9ff",
+                    "on-primary-fixed": "#001f2a",
+                    "secondary": "#4c616b",
+                    "primary": "#004d64",
+                    "surface-variant": "#e1e3e4",
+                    "secondary-container": "#cfe6f2",
+                    "surface-tint": "#016684",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-bright": "#f8fafb",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#a2e1ff",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(248, 250, 251, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .ghost-border {
+            border: 1px solid rgba(191, 200, 205, 0.15);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #004d64 0%, #006684 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-teal-900 font-headline">MediQuery AI</div>
+<div class="hidden md:flex items-center space-x-8 font-headline font-semibold tracking-tight text-slate-600">
+<a class="text-teal-700 border-b-2 border-teal-700 transition-colors cursor-pointer duration-200" href="#">Platform</a>
+<a class="hover:text-teal-800 transition-colors cursor-pointer duration-200" href="#">Intelligence</a>
+<a class="hover:text-teal-800 transition-colors cursor-pointer duration-200" href="#">Research</a>
+<a class="hover:text-teal-800 transition-colors cursor-pointer duration-200" href="#">Pricing</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-slate-600 font-headline font-semibold px-4 py-2 hover:text-teal-800 transition-all cursor-pointer">Sign In</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-md font-headline font-semibold shadow-sm hover:opacity-90 transition-all cursor-pointer">Get Started</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Search Section -->
+<section class="relative min-h-[716px] flex flex-col items-center justify-center px-6 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-surface/40 z-10"></div>
+<img class="w-full h-full object-cover grayscale-[20%] opacity-40" data-alt="Modern sterile clinical laboratory with soft blue ambient lighting, high-tech microscopic equipment, and clean reflective surfaces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfinksckYNKSCp_CsLrj8DgEa2YZb9pliF6Cze3JK9IIfnu5qbc6NYRCV6_5f2V08dtub3DSiYss29pQzO1y0rSTuiGpBD_AQ0zbKjlDbuqXXGvRM5wxal3Y0CKY45hl8XTM-SClBfuHZPzxwhmUPMGb_AEBQuLTuVhoeDqkW-bkFdbjZqrdZgnOIXPp2jo-eP02h2vowmzG3w8ORXOamnjHij0ThYYvkSIXc4fzq0wvamS0MujGaMxwvzWARl4JDwH_dG0-PL5p8S"/>
+</div>
+<div class="relative z-20 w-full max-w-4xl text-center space-y-8">
+<div class="space-y-4">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-semibold tracking-widest uppercase">Clinical Intelligence Editorial</span>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tight text-primary leading-tight">
+                        Precision Analytics for <br/>Pharmaceutical Excellence
+                    </h1>
+<p class="text-lg text-slate-600 max-w-2xl mx-auto font-body">
+                        Decode complex molecular data and clinical pathways through our AI-driven laboratory interface.
+                    </p>
+</div>
+<!-- Search Component -->
+<div class="relative max-w-3xl mx-auto mt-12">
+<div class="glass-panel ghost-border rounded-full p-2 flex items-center shadow-2xl shadow-primary/5">
+<div class="pl-6 pr-4 flex items-center text-primary">
+<span class="material-symbols-outlined text-3xl">search</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-xl font-headline text-on-surface placeholder:text-slate-400 py-4" placeholder="Search molecules, clinical trials, or regulatory data..." type="text"/>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-primary-container transition-all">
+                            Analyze
+                        </button>
+</div>
+<!-- Quick Search Chips -->
+<div class="flex flex-wrap justify-center gap-3 mt-6">
+<span class="text-on-surface-variant text-sm font-medium mr-2 self-center">Quick Insights:</span>
+<button class="px-5 py-2 rounded-full bg-surface-container-low ghost-border text-on-surface-variant text-sm font-semibold hover:bg-surface-container-high transition-colors">Paracetamol</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-low ghost-border text-on-surface-variant text-sm font-semibold hover:bg-surface-container-high transition-colors">Aspirin</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-low ghost-border text-on-surface-variant text-sm font-semibold hover:bg-surface-container-high transition-colors">Ibuprofen</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-low ghost-border text-on-surface-variant text-sm font-semibold hover:bg-surface-container-high transition-colors">Amoxicillin</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Insight Grid -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="mb-16 flex justify-between items-end">
+<div class="max-w-2xl">
+<h2 class="text-4xl font-headline font-bold text-primary mb-4 tracking-tight">Intelligence Ecosystem</h2>
+<p class="text-slate-600">Advanced predictive models designed for the next generation of drug development and clinical validation.</p>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-4xl text-outline-variant opacity-50">science</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest ghost-border p-8 rounded-xl flex flex-col space-y-6 group hover:shadow-lg transition-all duration-300">
+<div class="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary-container">
+<span class="material-symbols-outlined text-tertiary">hub</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-headline font-bold text-primary">Molecular Mapping</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Visualize complex bio-interactions with sub-atomic precision through AI neural mapping.</p>
+</div>
+<div class="pt-4 border-t border-slate-50 flex items-center text-xs font-bold text-tertiary tracking-wider uppercase group-hover:gap-2 transition-all">
+<span>Explore Model</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest ghost-border p-8 rounded-xl flex flex-col space-y-6 group hover:shadow-lg transition-all duration-300">
+<div class="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary-container">
+<span class="material-symbols-outlined text-tertiary">timeline</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-headline font-bold text-primary">Clinical Pathway Prediction</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Predict trial outcomes using historical data trends and advanced patient cohort modeling.</p>
+</div>
+<div class="pt-4 border-t border-slate-50 flex items-center text-xs font-bold text-tertiary tracking-wider uppercase group-hover:gap-2 transition-all">
+<span>View Analytics</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest ghost-border p-8 rounded-xl flex flex-col space-y-6 group hover:shadow-lg transition-all duration-300">
+<div class="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary-container">
+<span class="material-symbols-outlined text-tertiary">verified_user</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-headline font-bold text-primary">Regulatory Compliance</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Automated alignment with global health authority standards including FDA and EMA protocols.</p>
+</div>
+<div class="pt-4 border-t border-slate-50 flex items-center text-xs font-bold text-tertiary tracking-wider uppercase group-hover:gap-2 transition-all">
+<span>Compliance Check</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest ghost-border p-8 rounded-xl flex flex-col space-y-6 group hover:shadow-lg transition-all duration-300">
+<div class="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary-container">
+<span class="material-symbols-outlined text-tertiary">dataset</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-headline font-bold text-primary">Integrative Data Ecosystem</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Unified data streams from laboratory benches to longitudinal patient registry observations.</p>
+</div>
+<div class="pt-4 border-t border-slate-50 flex items-center text-xs font-bold text-tertiary tracking-wider uppercase group-hover:gap-2 transition-all">
+<span>Access Hub</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Intelligence Section -->
+<section class="py-24 bg-surface">
+<div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-12 gap-8">
+<!-- Large Feature -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-2xl overflow-hidden flex flex-col md:flex-row min-h-[400px]">
+<div class="flex-1 p-12 space-y-6 flex flex-col justify-center">
+<h2 class="text-3xl font-headline font-bold text-primary">Intelligence Confidence Scores</h2>
+<p class="text-on-surface-variant leading-relaxed">Our proprietary confidence gauging system evaluates clinical trial viability by synthesizing over 14,000 biological variables per molecule.</p>
+<div class="flex items-center space-x-8 pt-4">
+<div class="flex flex-col">
+<span class="text-4xl font-headline font-extrabold text-tertiary">98.4%</span>
+<span class="text-xs font-bold tracking-widest uppercase text-slate-500">Prediction Accuracy</span>
+</div>
+<div class="w-px h-12 bg-outline-variant opacity-30"></div>
+<div class="flex flex-col">
+<span class="text-4xl font-headline font-extrabold text-tertiary">4.2s</span>
+<span class="text-xs font-bold tracking-widest uppercase text-slate-500">Latency Peak</span>
+</div>
+</div>
+</div>
+<div class="flex-1 relative">
+<img class="w-full h-full object-cover" data-alt="Futuristic glowing interface showing circular data visualizations and genetic sequences in vibrant teal and cyan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHiTgVwN6yC9V2NMYa-iHOx4AyffSZ4vMtUj9MxaBo-y39fV4KBC29u420-vEQke9xax9UW4iPC9KHRO8_did7uhuPlO4cD5kCN0lVZwfldMmcWh4VhgaQK40JQbR4hjQO4BwnLWM_fTcuhdF2DIJUcqRGOFYgBncLKW8aThTVRPu5Yi9wPUkB-KN3ndIcs8OmYXuhhDh-0nNusHb6NZd-FB7kIsUfQzN7bDyp3fPKwJXQzwK8awiZL2VudLLK9YfaNKx4FCB4-tFM"/>
+</div>
+</div>
+<!-- Secondary Insight -->
+<div class="col-span-12 lg:col-span-4 bg-primary rounded-2xl p-12 text-on-primary flex flex-col justify-between">
+<div class="space-y-4">
+<h3 class="text-2xl font-headline font-bold">Research Stream</h3>
+<p class="text-primary-fixed-dim/80">Real-time pharmaceutical publication indexing with automated sentiment analysis.</p>
+</div>
+<div class="mt-8 space-y-4">
+<div class="p-4 bg-white/10 rounded-lg backdrop-blur-sm ghost-border">
+<p class="text-xs opacity-60 mb-1">Last Update: 2m ago</p>
+<p class="text-sm font-semibold">New FDA Fast Track: Compound-882 Analysis</p>
+</div>
+<button class="w-full py-4 bg-surface-container-lowest text-primary font-bold rounded-lg hover:bg-secondary-container transition-all">Subscribe to Digest</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 bg-slate-50">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-8 w-full max-w-screen-2xl mx-auto">
+<div class="flex flex-col items-center md:items-start mb-6 md:mb-0">
+<span class="font-['Manrope'] font-bold text-teal-900 text-xl">MediQuery AI</span>
+<p class="font-['Inter'] text-sm tracking-normal text-slate-500 mt-2">© 2024 MediQuery AI. Clinical Intelligence Editorial.</p>
+</div>
+<div class="flex space-x-8">
+<a class="text-slate-500 font-['Inter'] text-sm hover:underline hover:text-teal-600 transition-all" href="#">Privacy Policy</a>
+<a class="text-slate-500 font-['Inter'] text-sm hover:underline hover:text-teal-600 transition-all" href="#">Terms of Service</a>
+<a class="text-slate-500 font-['Inter'] text-sm hover:underline hover:text-teal-600 transition-all" href="#">Compliance</a>
+<a class="text-slate-500 font-['Inter'] text-sm hover:underline hover:text-teal-600 transition-all" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>
