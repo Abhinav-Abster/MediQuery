@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MediQuery AI
+
+> A polished AI-powered medicine lookup experience for fast, visually rich pharmaceutical insights.
+
+MediQuery AI helps users search any medicine and instantly explore a structured overview of its dosage, side effects, interactions, contraindications, and manufacturing process. The app blends Google Gemini AI with an expressive Next.js interface built for speed, clarity, and a premium feel.
+
+## Highlights
+
+- AI-generated medicine summaries powered by Google Gemini
+- Interactive side-effect visualization with Recharts
+- Detailed tabs for overview, side effects, manufacturing, and interactions
+- Animated, neumorphic UI with dark/light theme support
+- Responsive App Router architecture with a dedicated medicine detail page
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- Tailwind CSS 4
+- GSAP and @gsap/react
+- Recharts
+- lucide-react icons
+- Google Generative AI SDK
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- A Google Gemini API key
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Configure environment variables
+
+Create a `.env.local` file in the project root and add your Gemini API key:
+
+```bash
+GEMINI_API_KEY=your_api_key_here
+```
+
+### Run the app
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - start the development server
+- `npm run build` - create a production build
+- `npm run start` - run the production server
+- `npm run lint` - run ESLint
 
-## Learn More
+## How It Works
 
-To learn more about Next.js, take a look at the following resources:
+1. Search for a medicine on the home screen.
+2. The app sends the medicine name to `/api/medicine`.
+3. Gemini returns a structured JSON response.
+4. The detail page renders the medicine profile with charts and tabbed sections.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Key Routes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `/` - landing page and medicine search
+- `/medicine/[name]` - medicine detail experience
+- `/api/medicine` - AI data generation endpoint
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```text
+app/
+  api/medicine/route.js     # Gemini-powered API route
+  medicine/[name]/page.js   # Medicine detail page
+  page.js                   # Home search experience
+  components/               # Shared UI and motion components
+public/                     # Static assets
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+
+- The content is AI-generated for educational purposes only.
+- Always consult a qualified healthcare professional for medical advice.
+- The app expects `GEMINI_API_KEY` to be available at runtime.
+
+## Deployment
+
+This project is ready to deploy on Vercel or any platform that supports Next.js. Set `GEMINI_API_KEY` in your deployment environment before launching.
